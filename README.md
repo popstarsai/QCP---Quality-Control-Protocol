@@ -1,26 +1,18 @@
 # QCP---Quality-Control-Protocol
-# Contributing to QCP
+# # Quality Content Protocol (QCP)
 
-Thanks for helping improve the Quality Content Protocol.
+A simple, open protocol for creators and AI agents to declare, share, and verify expected quality attributes of content—especially video—before and after platform processing (re-encoding, adaptive streaming, compression, etc.).
 
-## Ways to contribute
-- Improve the schema
-- Add or refine platform notes
-- Submit example documents
-- Propose tooling or MCP server ideas
-- Report issues or unclear wording
+## Why
+Platforms often re-encode uploads. Creators currently have little visibility into the resulting quality loss. QCP provides a machine-readable way to document original specs, preferred upload settings, and quality claims so tools and agents can work with the information.
 
-## Process
-1. Open an issue describing the change or problem.
-2. Fork the repo and create a branch.
-3. Make your changes.
-4. Open a pull request against `main`.
+## Quick start
+1. Look at `schema/qcp-v0.1.schema.json`
+2. See a minimal example in `examples/basic-video.json`
+3. Publish your QCP document next to your media, in a repo, or via a registry
 
-## Guidelines
-- Keep the protocol simple and practical.
-- Prefer additive changes over breaking ones in early versions.
-- Document new fields clearly.
-- Platform notes should be observational and community-sourced, not presented as official platform documentation.
+## Status
+v0.1 – early draft. Feedback and contributions welcome.
 
-## Code of conduct
-Be respectful. Focus on technical improvement of the protocol.
+## License
+MIT (or change as desired)
