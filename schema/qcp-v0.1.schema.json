@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/qcp/v0.1.schema.json",
+  "title": "Quality Content Protocol v0.1",
+  "type": "object",
+  "required": ["qcp_version", "content_id", "original", "timestamp"],
+  "properties": {
+    "qcp_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "content_id": {
+      "type": "string",
+      "description": "Stable identifier (SHA-256 hash of original file recommended, or content URI)"
+    },
+    "creator": {
+      "type": "object",
+      "properties": {
+        "did": { "type": "string" },
+        "handle": { "type": "string" },
+        "agent": { "type": "string" }
+      }
+    },
+    "original": {
+      "type": "object",
+      "required": ["media_type"],
+      "properties": {
+        "media_type": { "type": "string" },
+        "codec": { "type": "string" },
+        "resolution": { "type": "string" },
+        "framerate": { "type": "number" },
+        "bitrate_kbps": { "type": "number" },
+        "audio_codec": { "type": "string" },
+        "duration_s": { "type": "number" },
+        "checksum": { "type": "string" }
+      }
+    },
+    "expected_processing": {
+      "type": "object",
+      "properties": {
+        "platforms": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" },
+        "preferred_upload": { "type": "string" }
+      }
+    },
+    "quality_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric": { "type": "string" },
+          "method": { "type": "string" },
+          "score": { "type": ["number", "null"] },
+          "after_platform": { "type": "boolean" }
+        }
+      }
+    },
+    "notification_preferences": {
+      "type": "object",
+      "properties": {
+        "on_reencode_detected": { "type": "boolean" },
+        "channels": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "signature": {
+      "type": "string",
+      "description": "Optional cryptographic signature"
+    }
+  },
+  "additionalProperties": true
+}
