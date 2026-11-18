@@ -1,0 +1,20 @@
+name: Validate QCP
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install validator dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate example documents
+        run: python -m qcp examples/basic-video.json
+      - name: Run validator tests
+        run: python -m unittest discover -s tests -v
