@@ -1,0 +1,21 @@
+{
+  "qcp_version": "0.1",
+  "content_id": "sha256:exampleplaceholder",
+  "creator": {
+    "handle": "@example"
+  },
+  "original": {
+    "media_type": "video/mp4",
+    "codec": "H.264",
+    "resolution": "1920x1080",
+    "framerate": 30,
+    "bitrate_kbps": 8000,
+    "checksum": "sha256:exampleplaceholder"
+  },
+  "expected_processing": {
+    "platforms": ["x.com"],
+    "notes": "Expect platform re-encoding for adaptive streaming.",
+    "preferred_upload": "H.264, 1080p, solid bitrate"
+  },
+  "timestamp": "2026-11-18T14:11:00Z"
+}
